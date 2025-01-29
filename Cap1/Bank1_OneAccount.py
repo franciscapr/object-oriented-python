@@ -2,9 +2,9 @@
 # Bank Version 1
 # Single account
 
-accountName = 'Joe'
-accountBalance = 100
-accountPassword = 'soup'
+accountName = 'Joe'  
+accountBalance = 100    
+accountPassword = 'soup'  
 
 while True:
     print()
