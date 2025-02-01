@@ -59,6 +59,8 @@ class TV():
 
     def showInfo(self):
         print()
+        print('Status of TV:', self.brand)
+        print('     Location:', self.location)
         print('Status of TV:')
         if self.isOn:
             print('    TV is: On')
