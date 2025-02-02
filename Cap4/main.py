@@ -1,1 +1,1 @@
-from Cap4.BankOOP1_IndividualVariables.Account import *
+from Account import *
