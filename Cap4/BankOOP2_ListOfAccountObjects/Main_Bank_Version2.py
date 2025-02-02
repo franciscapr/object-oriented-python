@@ -5,11 +5,11 @@
 from Account import *
 
 # Comenzamos con una lista vacía de cuentas
-accountsList = []    # Creamos una lista vacía
+accountsList = []    # 1.Creamos una lista vacía de cuentas
 
 # Crear dos cuentas
-oAccount = Account('Joe', 100, 'JoesPassword')
-accountsList.append(oAccount)    # Agregamos oAccount a la lista accountsList
+oAccount = Account('Joe', 100, 'JoesPassword')    # 2.Creamos una objeto de cuenta para Joe
+accountsList.append(oAccount)    # 3.Agregamos el objeto de cuenta de Joe a la lista mediante el mètodo append()
 print('La cuenta de Joe tiene el número de cuenta 0')
 
 oAccount = Account('Mary', 12345, 'MarysPassword')
