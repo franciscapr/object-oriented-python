@@ -14,7 +14,7 @@ print("El número de cuenta de Joe es:", joesAccountNumber)
 marysAccountNumber = oBank.createAccount('Mary', 12345, 'MarysPassword')
 print("El número de cuenta de Mary es:", marysAccountNumber)
 
-while True:
+while True:    # 1.Pedimos al usuario la acciòn
     print()
     print('Para obtener el saldo de una cuenta, presione b')
     print('Para cerrar una cuenta, presione c')
@@ -31,9 +31,11 @@ while True:
     action = action[0]  # Tomar la primera letra
     print()
     
+    # Llamamos al mètodo apropiado en el objeto bank para realizar el trabajo
     if action == 'b':
         oBank.balance()
 
+    # Solicirud de cierre --> se elimina la cuenta
     elif action == 'c':
         oBank.closeAccount()
 
