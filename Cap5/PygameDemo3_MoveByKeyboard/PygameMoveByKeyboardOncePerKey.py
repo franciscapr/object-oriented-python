@@ -67,6 +67,7 @@ while True:
 
     # 10 - Draw all window elements
     # draw ball at position 100 across (x) and 200 down (y)
+    window.blit(targetImage, (TARGET_X, TARGET_Y))
     window.blit(ballImage, (ballX, ballY))
 
     # 11 - Update the windown
