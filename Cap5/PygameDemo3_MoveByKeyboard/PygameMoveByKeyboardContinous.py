@@ -46,16 +46,21 @@ while True:
             pygame.quit()
             sys.exit()
 
-        elif event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_LEFT:
-                ballX = ballX - N_PIXELS_TO_MOVE
-            elif event.key == pygame.K_RIGHT:
-                ballX = ballX + N_PIXELS_TO_MOVE
-            elif event.key == pygame.K_UP:
-                ballY = ballY - N_PIXELS_TO_MOVE
-            elif event.key == pygame.K_DOWN:
-                ballY = ballY + N_PIXELS_TO_MOVE
+    keyPressedTuple = pygame.key.get_pressed()
 
+    if keyPressedTuple[pygame.K_LEFT]:
+        ballX = ballX - N_PIXELS_TO_MOVE
+
+    if keyPressedTuple[pygame.K_RIGHT]:
+        ballX = ballX + N_PIXELS_TO_MOVE
+    
+    if keyPressedTuple[pygame.K_UP]:
+        ballY = ballY - N_PIXELS_TO_MOVE
+
+    if keyPressedTuple[pygame.K_DOWN]:
+        ballY = ballY + N_PIXELS_TO_MOVE
+
+    # Check if the ball is colliding with the target
     ballRect = pygame.Rect(ballX, ballY, BALL_WIDTH_HEIGHT, BALL_WIDTH_HEIGHT)
 
     if ballRect.colliderect(targetRect):
