@@ -78,9 +78,23 @@ while True:
     pygame.draw.aalines(window, BLUE, True, 
                                   ((580, 400), (587, 450),
                                    (595, 460), (600, 444)))
+    
+    pygame.draw.line(window, RED, (250, 100), (250, 500), width=3)    
+    # window --> Hace referencia a la ventana
+    # color --> Hace referencia al color que aplicaremos en la forma primitiva
+    # closed --> Es un balor booleano, si es True se dibujara una linea entre el primer y ùltimo punto para completar la forma.
+    # points --> Es una lista o tupla de coordenadas (x, y)
+    # blend --> Si es True, mezclarà los tonos con los tonos de pìxeles existentes en lugar de sobrescribirlos.
+    # pos --> Es el centro el cìrculo.
+    # radius --> Es el radio.
+    # width --> Grosor de la linea
+    # pointslist --> Especifica losvètices del polìgono.
+
+
 
     # 11 - Update the window
     pygame.display.update()
+
 
     # 12 - Slow things down a bit
     clock.tick(FRAMES_PER_SECOND)  # make pygame wait
