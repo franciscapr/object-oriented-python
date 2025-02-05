@@ -20,6 +20,7 @@ clock = pygame.time.Clock()
 
 # 4 - Cargar recursos: imagen(es), sonido(s), etc.
 ballImage = pygame.image.load('Cap5/PygameDemo4_OneBallBounce/images/ball.png')
+bounceSound = pygame.mixer.Sound('Cap5/PygameDemo4_OneBallBounce/sounds/boing.wav')    # Importamos el sonido
 
 # 5 - Inicializar variables
 ballRect = ballImage.get_rect()
@@ -42,8 +43,11 @@ while True:
     # 8 - Realizar acciones por cada fotograma
     if (ballRect.left < 0) or (ballRect.right >= WINDOW_WIDTH):
         xSpeed = -xSpeed  # Invertir dirección en X
+        bounceSound.play()    # Reproducimos el sonido
+
     if (ballRect.top < 0) or (ballRect.bottom >= WINDOW_HEIGHT):
         ySpeed = -ySpeed  # Invertir dirección en Y
+        bounceSound.play()    # Reproducimos el sonido
 
     # Actualizar el rectángulo de la pelota usando la velocidad en dos direcciones
     ballRect.left = ballRect.left + xSpeed
