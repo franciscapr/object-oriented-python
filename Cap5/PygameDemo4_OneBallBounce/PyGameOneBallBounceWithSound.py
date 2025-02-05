@@ -21,6 +21,8 @@ clock = pygame.time.Clock()
 # 4 - Cargar recursos: imagen(es), sonido(s), etc.
 ballImage = pygame.image.load('Cap5/PygameDemo4_OneBallBounce/images/ball.png')
 bounceSound = pygame.mixer.Sound('Cap5/PygameDemo4_OneBallBounce/sounds/boing.wav')    # Importamos el sonido
+pygame.mixer.music.load('Cap5/PygameDemo4_OneBallBounce/sounds/background.mp3')
+pygame.mixer.music.play(-1, 0.0)    # Reproducciòn de sonida de fondo
 
 
 # 5 - Inicializar variables
