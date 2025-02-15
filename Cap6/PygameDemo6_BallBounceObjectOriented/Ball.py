@@ -37,10 +37,9 @@ class Ball():
             self.ySpeed = -self.ySpeed
 
         # Update the ball's x and y, using the speed in two directions
-        self.x = self.y + self.xSpeed
+        self.x = self.x + self.xSpeed
         self.y = self.y + self.ySpeed
 
     def draw(self):
         self.window.blit(self.image, (self.x, self.y))
 
-        
