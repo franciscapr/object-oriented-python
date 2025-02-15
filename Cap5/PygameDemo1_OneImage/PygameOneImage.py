@@ -17,7 +17,7 @@ window = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))    # Pedimos a p
 clock = pygame.time.Clock()    # Esta funciòn crea un objeto clock que se usa en la parte inferiro de nuestro buble principal para mantener nuestra tasa màxima de fotogramas.
 
 # 4 - Cargar recursos: image(s), sound(s), etc.
-ballImage = pygame.image.load('PygameDemo1_OneImage/images/ball.png')
+ballImage = pygame.image.load('Cap5/PygameDemo1_OneImage/images/ball.png')
 # 5 - Inicializar variables
 # 6 - Loop forever
 
