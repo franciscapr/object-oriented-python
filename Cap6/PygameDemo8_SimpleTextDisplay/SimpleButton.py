@@ -1,16 +1,16 @@
-# Clase SimpleButton
+# SimpleButton class
 #
-# Utiliza un enfoque de "máquina de estados"
+# Uses a "state machine" approach
 #
 
 import pygame
 from pygame.locals import *
 
 class SimpleButton():
-    # Se usa para rastrear el estado del botón
-    STATE_IDLE = 'idle'  # El botón está arriba, el mouse no está sobre él
-    STATE_ARMED = 'armed'  # El botón está presionado, el mouse está sobre él
-    STATE_DISARMED = 'disarmed'  # Se hizo clic en el botón, pero el mouse salió de él
+    # Used to track the state of the button
+    STATE_IDLE = 'idle' # button is up, mouse not over button
+    STATE_ARMED = 'armed' # button is down, mouse over button
+    STATE_DISARMED = 'disarmed' # clicked down on button, rolled off
         
     def __init__(self, window, loc, up, down):
         self.window = window
@@ -18,7 +18,7 @@ class SimpleButton():
         self.surfaceUp = pygame.image.load(up)
         self.surfaceDown = pygame.image.load(down)
 
-        # Obtener el rectángulo del botón (usado para verificar si el mouse está sobre él)
+        # Get the rect of the button (used to see if the mouse is over the button)
         self.rect = self.surfaceUp.get_rect()
         self.rect[0] = loc[0]
         self.rect[1] = loc[1]
@@ -26,11 +26,11 @@ class SimpleButton():
         self.state = SimpleButton.STATE_IDLE
 
     def handleEvent(self, eventObj):
-        # Este método devolverá True si el usuario hace clic en el botón.
-        # Normalmente devuelve False.
+        # This method will return True if user clicks the button.
+        # Normally returns False.
 
         if eventObj.type not in (MOUSEMOTION, MOUSEBUTTONUP, MOUSEBUTTONDOWN):
-            # El botón solo se preocupa por eventos relacionados con el mouse
+            # The button only cares about mouse-related events
             return False
 
         eventPointInButtonRect = self.rect.collidepoint(eventObj.pos)
@@ -42,7 +42,7 @@ class SimpleButton():
         elif self.state == SimpleButton.STATE_ARMED:
             if (eventObj.type == MOUSEBUTTONUP) and eventPointInButtonRect:
                 self.state = SimpleButton.STATE_IDLE
-                return True  # ¡Clic realizado!
+                return True  # clicked!
 
             if (eventObj.type == MOUSEMOTION) and (not eventPointInButtonRect):
                 self.state = SimpleButton.STATE_DISARMED
@@ -56,9 +56,9 @@ class SimpleButton():
         return False
 
     def draw(self):
-        # Dibujar la apariencia actual del botón en la ventana
+        # Draw the button's current appearance to the window
         if self.state == SimpleButton.STATE_ARMED:
             self.window.blit(self.surfaceDown, self.loc)
 
-        else:  # IDLE o DISARMED
+        else:  # IDLE or DISARMED
             self.window.blit(self.surfaceUp, self.loc)
