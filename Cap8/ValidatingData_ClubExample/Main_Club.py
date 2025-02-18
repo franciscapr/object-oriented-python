@@ -2,9 +2,13 @@
 
 from Club import *
 
+
 # Crear un club con un máximo de 5 miembros
 
 oProgrammingClub = Club('Programming', 5)
+
+# Cambiando los valores de la variable de instancia
+# oProgrammingClub.maxMembers = 300
 
 oProgrammingClub.addMember('Joe Schmoe')
 oProgrammingClub.addMember('Cindy Lou Hoo')
