@@ -29,5 +29,14 @@ class Square():
         theArea = self.widthAndHeight * self.widthAndHeight
         return theArea
     
+    def __eq__(self, oOtherSquare):
+        if not isinstance(oOtherSquare, Square):
+            raise TypeError('Second object was not a Square')
+        if self.widthAndHeight == oOtherSquare.widthAndHeight:
+            return True    # math
+        else:
+            return False    # Not a match
+
+    
     def draw(self):
         pygame.draw.rect(self.window, self.color, (self.x, self.y, self.widthAndHeight, self.widthAndHeight))

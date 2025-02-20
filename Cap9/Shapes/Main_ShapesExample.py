@@ -13,7 +13,7 @@ WINDOW_HEIGHT = 480
 FRAMES_PER_SECOND = 30
 N_SHAPES = 10
 
-# Set up the window
+# Configurar la ventana
 pygame.init()
 window = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT), 0, 32)
 clock = pygame.time.Clock()
@@ -42,7 +42,7 @@ while True:
                     area = oShape.getArea()
                     area = str(area)
                     theType = oShape.getType()
-                    newText = 'Clicked on a ' + theType + ' whoose are is' + area
+                    newText = 'Clicked on a ' + theType + ' whoose are is: ' + area
                     oStatusLine.setValue(newText)
                     break    # only deal with topmost shape
     # Tell each shape to draw irself
