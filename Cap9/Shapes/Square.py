@@ -18,7 +18,7 @@ class Square():
         self.rect = pygame.Rect(self.x, self.y, self.widthAndHeight, self.widthAndHeight)
         self.shapeType = 'Square'
 
-    def chickedInside(self, mousePoint):
+    def clickedInside(self, mousePoint):
         clicked = self.rect.collidepoint(mousePoint)
         return clicked
     
@@ -30,4 +30,4 @@ class Square():
         return theArea
     
     def draw(self):
-        pygame.draw.rect(self.window, self.color, self.x, self.y, self.widthAndHeight, self.widthAndHeight)
+        pygame.draw.rect(self.window, self.color, (self.x, self.y, self.widthAndHeight, self.widthAndHeight))

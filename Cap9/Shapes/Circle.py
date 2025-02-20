@@ -17,12 +17,12 @@ class Circle():
         self.y = random.randrange(25, maxHeight - 100)
         self.radius = random.randrange(10, 50)
         self.centerX = self.x + self.radius
-        self.cenyerY = self.y + self.radius
+        self.centerY = self.y + self.radius
         self.rect = pygame.Rect(self.x, self.y, self.radius * 2, self.radius * 2)
         self.shapeType = 'Circle'
 
     def clickedInside(self, mousePoint):
-        distance = math.sqrt(((mousePoint[0] - self.centerX) ** 2) + ((mousePoint[1] - self.cenyerY) ** 2))
+        distance = math.sqrt(((mousePoint[0] - self.centerX) ** 2) + ((mousePoint[1] - self.centerY) ** 2))
         if distance <= self.radius:
             return True
         else:
@@ -36,4 +36,4 @@ class Circle():
         return self.shapeType
     
     def draw(self):
-        pygame.draw.circle(self.window, self.color, self.centerX, self.cenyerY, self.radius, 0)
+        pygame.draw.circle(self.window, self.color, (self.centerX, self.centerY), self.radius, 0)
